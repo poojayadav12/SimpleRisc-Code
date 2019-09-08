@@ -1,0 +1,29 @@
+mov cnt 0
+mov i 1
+
+.loop :
+mov j i
+mov k i
+.loop1:
+  .loop2:
+    mul r1 j j
+    mul r2 r1 j
+    mul r3 k k 
+    mul r4 r3 k
+    mov r5 0
+    add r6 r2 r4
+    cmp r5 i
+    beq.countIncrease
+    sub k k 1
+    cmp k 0
+    bgt.loop2
+  sub j j 0
+  bgt.loop1
+ cmp cnt 0
+ bgt.loop1
+add i i 1
+cnt Increase :
+   add cnt cnt 1
+.exit:
+ exit
+mov cnt 0
